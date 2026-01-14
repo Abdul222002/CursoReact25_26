@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Saludo from './components/Saludo'
 import Tarjeta from './components/Tarjeta'
 import FormularioUsuario from './components/FormularioUsuario'
+import ListaDeContactos from './components/ListaDeContactos'
+import FormularioLogin from './components/LoginMejorado'
 
 const App = () => {
   return (
@@ -10,6 +12,7 @@ const App = () => {
     <div className='min-h-screen bg-gray-300 '>
       <Header/>
       <main className='container bg-gray-100 mx-auto p-4'>
+        {/*
         <Saludo nombre='Carlos' edad={23}/>
         <Saludo nombre='Luis' edad={23}/>
         <Saludo nombre='Sarah' edad={23}/>
@@ -36,7 +39,10 @@ const App = () => {
           imagen='https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           />
         </div>
+        <ListaDeContactos/>
         <FormularioUsuario/>
+        */}
+        <FormularioLogin/>
       </main>
     </div>
   )
