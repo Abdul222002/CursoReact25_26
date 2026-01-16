@@ -1,26 +1,16 @@
+import { API_CONFIG, type Plato } from "../../types"
+
 //api hara un fecth a mi api para traer todos los platos
-
-
-export interface Plato {
-    id:number,
-    nombre:string,
-    categoria:string,
-    origen:string,
-    calorias:number,
-    ingredientes:string[],
-    imagen:string
-}
-
 export const fecthPlatos=async():Promise<Plato[]>=>{
+    const url=`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.PLATOS}`
     try {
-        const response=await fetch("http://192.168.50.120:1494/api/platos")
+        const response=await fetch(url)
         if(!response.ok){
             throw new Error("Error al cargar los platos")
         }
         return await response.json()
     } catch (error) {
         console.log(error)
-        return []
-    
+        throw error
     }
 }
