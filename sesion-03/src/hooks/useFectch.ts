@@ -27,6 +27,7 @@ export function useFetch<T>(url:string){
                 }
                 const result=await response.json()
                 setData(result)
+                setError(null)
                 setLoading(false)
             } catch (error) {
                 setError(error as Error)
