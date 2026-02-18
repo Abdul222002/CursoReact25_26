@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Layout from "./components/Layout";
 
 const BookDetailPage = lazy(() => import("./pages/BookDetailPage"));
 const CreateBookPage = lazy(() => import("./pages/CreateBookPage"));
@@ -11,6 +12,7 @@ const FavoritesPage = lazy(() => import("./pages/FavoritosPage"));
 const App = () => {
   return (
     <Routes>
+      <Route path="/" element={<Layout />} >
       <Route path="/books/:id" element={<BookDetailPage />} />
       <Route path="/favorites" element={<FavoritesPage />} />
       <Route path="/libro/:id" element={
@@ -30,6 +32,7 @@ const App = () => {
       } />
 
       <Route path="*" element={<div>404 Not Found</div>} />
+      </Route>
     </Routes>
   );
 };
