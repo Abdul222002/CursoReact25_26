@@ -98,9 +98,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       try {
         // comprobar si el token sigue siendo válido
-        const response = await authAPI.getMe();
+        const user = await authAPI.getMe();
 
-        setUser(response.user);
+        setUser(user);
         setToken(storedToken);
       } catch {
         // token inválido o expirado

@@ -72,7 +72,7 @@ export const incidentsAPI = {
 * ELiminar una incidencia por id
 */
     async deleteIncident(id:number):Promise<MessageResponse> {
-    const response = await fetch(`${API_URL}/incidents/${id}`, {
+    const response = await fetch(`${API_URL}/api/incidents/${id}`, {
         method: "DELETE",
         headers: getHeaders(),
     });
@@ -92,7 +92,7 @@ export const incidentsAPI = {
 // ========================================
 export const authAPI = {
     async login(data: LoginDTO): Promise<AuthResponse> {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        const response = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: getHeaders(),
         body: JSON.stringify(data),
@@ -102,8 +102,8 @@ export const authAPI = {
         }
         return response.json();
     },
-    async getMe(): Promise<{ user: User }> {
-        const response = await fetch(`${API_URL}/auth/me`, {
+    async getMe(): Promise<User> {
+        const response = await fetch(`${API_URL}/api/auth/me`, {
         headers: getHeaders(),
         });
         if (!response.ok) {
