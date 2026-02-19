@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import {  IncidentsContext } from "../context/IndicidentsContext";
+import {  IncidentsContext } from "../context/IncidentsContext";
 
 export function useIncidents() {
   const context = useContext(IncidentsContext);

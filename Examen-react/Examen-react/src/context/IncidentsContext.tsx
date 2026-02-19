@@ -11,7 +11,7 @@
  * ¿Por que actualizar el estado local en vez de volver a pedir todo al backend?
  * Porque es mas rapido. La UI se actualiza al instante sin esperar otra peticion.
  */
-import { createContext, useState, useEffect, useContext, type ReactNode } from "react";
+import { createContext, useState, useEffect, type ReactNode } from "react";
 import { toast } from "sonner";
 import type { CreateIncidentDTO, Incident } from "../types";
 import { incidentsAPI } from "../services/api";

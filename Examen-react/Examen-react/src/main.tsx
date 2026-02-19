@@ -3,16 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { AuthProvider } from './context/AuthContext.tsx'
-import { IncidentsProvider } from './context/IndicidentsContext.tsx'
-import IncidentCard from './components/IncidentCard.tsx'
-import IncidentForm from './components/IncidentForm.tsx'
+import { IncidentsProvider } from './context/IncidentsContext.tsx'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
       <IncidentsProvider>
         <App />
-        <IncidentForm />
       </IncidentsProvider>
     </AuthProvider>
   </StrictMode>,
